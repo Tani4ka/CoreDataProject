@@ -10,11 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
+
+    let testSwiftLet: String = "testSwiftLet"
+
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
 
+    @IBAction func save() {
+        print("Hello Tanya")
+    }
 
+    @IBAction func load() {
+    }
+
+    func userId() -> String {
+        return "Hello"
+    }
 }
-
