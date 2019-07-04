@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
@@ -21,13 +22,25 @@ class ViewController: UIViewController {
     }
 
     @IBAction func save() {
-        print("Hello Tanya")
+        // создаем Entity в контексте AppDelegate.viewContext в оперативной памяти, заполняем ему поля
+        let user = Entity(context: AppDelegate.viewContext)
+        user.name = "Tanya"
+        user.age = 33
+        user.isAlive = true
+        user.id = UUID().uuidString
     }
 
     @IBAction func load() {
+        let nameFetch = "Tanya"
+        // создаем запрос
+        let request: NSFetchRequest<Entity> = Entity.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@", nameFetch)
+        do {
+            let user = try AppDelegate.viewContext.fetch(request)
+            label.text = user.first?.id
+        } catch {
+            print(error)
+        }
     }
-
-    func userId() -> String {
-        return "Hello"
-    }
+    
 }

@@ -11,10 +11,11 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions
+        launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
@@ -45,14 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     class var viewContext: NSManagedObjectContext {
 
-        // swiftlint:disable:next force_cast
-        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        // swiftlint:disable:previous force_cast
+        // swiftlint: next force_cast
+//        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        // swiftlint: previous force_cast
 
-//        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
-//            fatalError("Could not determine appDelegate.")
-//        }
-//        return delegate.persistentContainer.viewContext
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("Could not determine appDelegate.")
+        }
+        return delegate.persistentContainer.viewContext // viewContext - main queue
     }
 
     // MARK: - Core Data stack
@@ -67,13 +68,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let container = NSPersistentContainer(name: "Les_15_CoreDataTest")
         container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
                 /*
+                Replace this implementation with code to handle the error appropriately.
+                fatalError() causes the application to generate a crash log and terminate.
+                You should not use this function in a shipping application, although it may be useful during development.
+
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+                 * The persistent store is not accessible, due to permissions or data protection
+                 when the device is locked.
                  * The device is out of space.
                  * The store could not be migrated to the current model version.
                  Check the error message to determine what the actual problem was.
@@ -92,8 +95,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 try context.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                /*
+                 Replace this implementation with code to handle the error appropriately.
+                 fatalError() causes the application to generate a crash log and terminate.
+                 You should not use this function in a shipping application, although it may
+                 be useful during development.
+               */
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }

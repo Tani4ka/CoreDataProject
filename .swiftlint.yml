@@ -1,10 +1,10 @@
 disabled_rules: # rule identifiers to exclude from running
-  - colon
-  - comma
-  - control_statement
+  # - colon
+  # - comma
+  # - control_statement
+  - trailing_whitespace
   # - identifier_name
   # - type_name
-  # - trailing_whitespace
   # - force_cast
   # - legacy_constructor
   # - cyclomatic_complexity
@@ -23,16 +23,15 @@ included: # paths to include during linting. `--path` is ignored if present.
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Carthage
   - Pods
-  - Source/ExcludedFolder
-  - Source/ExcludedFile.swift
-  - Source/*/ExcludedFile.swift
-  # - SwiftLint/Common/3rdPartyLib
+  - Les_11_Networking/Models/UserModels.swift
+  # - Source/ExcludedFolder
+  # - Source/ExcludedFile.swift
+  # - Source/*/ExcludedFile.swift
   # - Pods/RxSwift/RxSwift/Schedulers
-  # - Pods/RxSwift/RxSwift/Schedulers/CurrentThreadScheduler.swift
+  # - Pods/RxSwift/RxSwift/Schedulers/CurrentThreadScheduler.
 
-# Rules run by `swiftlint analyze` (experimental)
-# analyzer_rules: 
-#   - explicit_self
+analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
+  - explicit_self
 
 # configurable rules can be customized from this configuration file
 
@@ -44,10 +43,10 @@ force_try:
 # rules that have both warning and error levels, can set just the warning level
 # implicitly
 line_length:
-  warning: 110
-  error: 200
+  warning: 110  
+  # error: 200
   ignores_comments: true
-  ignores_function_declarations: true
+  # ignores_function_declarations: true
   # ignores_interpolated_strings: true
   # ignores_urls: true
 
@@ -79,17 +78,6 @@ identifier_name:
     - URL
     - GlobalAPIKey
 
-# Id insted ID
-custom_rules:
-  id_suffix_naming:
-    name: "Wrong name"
-    regex: "(ID)"
-    match_kinds:
-      - comment
-      - identifier
-    message: "Use 'Id' instead 'ID'"
-    severity: error
-
 # function_body_length:
 #     warning: 300
 #     error: 500
@@ -106,3 +94,14 @@ custom_rules:
 
 # reporter type (xcode, json, csv, checkstyle, junit, html, emoji, sonarqube, markdown)
 reporter: "xcode" 
+
+# Id insted ID
+# custom_rules:
+#   id_suffix_naming:
+#     name: "Wrong name"
+#     regex: "(ID)"
+#     match_kinds:
+#       - comment
+#       - identifier
+#     message: "Use 'Id' instead 'ID'"
+#     severity: error

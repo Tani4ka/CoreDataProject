@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5643C03122C6169F00455344 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5643C03022C6169F00455344 /* Entity.swift */; };
 		5678232B22C4C93E00011E9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5678232A22C4C93E00011E9D /* AppDelegate.swift */; };
 		5678232D22C4C93E00011E9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5678232C22C4C93E00011E9D /* ViewController.swift */; };
 		5678233022C4C93E00011E9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5678232E22C4C93E00011E9D /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		433228EC2626FF7580EDF843 /* Pods_Les_15_CoreDataTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Les_15_CoreDataTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5643C03022C6169F00455344 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		5678232722C4C93E00011E9D /* Les_15_CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Les_15_CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5678232A22C4C93E00011E9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5678232C22C4C93E00011E9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			children = (
 				5678232A22C4C93E00011E9D /* AppDelegate.swift */,
 				5678232C22C4C93E00011E9D /* ViewController.swift */,
+				5643C03022C6169F00455344 /* Entity.swift */,
 				5678232E22C4C93E00011E9D /* Main.storyboard */,
 				5678233422C4C94000011E9D /* Assets.xcassets */,
 				5678233622C4C94000011E9D /* LaunchScreen.storyboard */,
@@ -176,7 +179,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		8DD12B4CA89E93C203A71ED6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -207,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5643C03122C6169F00455344 /* Entity.swift in Sources */,
 				5678232D22C4C93E00011E9D /* ViewController.swift in Sources */,
 				5678233322C4C93E00011E9D /* Les_15_CoreDataTest.xcdatamodeld in Sources */,
 				5678232B22C4C93E00011E9D /* AppDelegate.swift in Sources */,
